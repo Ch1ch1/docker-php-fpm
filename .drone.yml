@@ -3,7 +3,11 @@ type: docker
 name: Building
 
 steps:
-- name: build & push
+- name: build
+  image: plugins/docker
+  settings:
+    repo: ch1ch1/php-fpm
+- name: push
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
@@ -11,7 +15,7 @@ steps:
     username: ch1ch1
     password:
       from_secret: dockerhub-password
-- name: Deliver the update
+- name: deliver
   image: plugins/webhook
   settings:
     urls:
