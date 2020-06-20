@@ -1,5 +1,7 @@
 # PHP-FPM
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5e6ebc238faf4f6a8153fd12479e694d)](https://app.codacy.com/manual/Ch1ch1/docker-php-fpm?utm_source=github.com&utm_medium=referral&utm_content=Ch1ch1/docker-php-fpm&utm_campaign=Badge_Grade_Dashboard)
+
 A PHP-FPM container from [Bitnami](https://hub.docker.com/r/bitnami/php-fpm)
 
 ![Build Status](https://drone.ch1.ninja/api/badges/Ch1ch1/php-fpm/status.svg)
