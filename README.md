@@ -12,9 +12,9 @@ PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation w
 
 [php-fpm.org](https://php-fpm.org)
 
-## Added applications
+## Added
 
-* [GIT](https://git-scm.com/)  
+### [GIT](https://git-scm.com/)  
 
 ## Php-fpm port
 
