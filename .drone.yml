@@ -3,11 +3,7 @@ type: docker
 name: Building
 
 steps:
-- name: build
-  image: plugins/docker
-  settings:
-    repo: ch1ch1/php-fpm
-- name: push
+- name: build & push
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
