@@ -11,6 +11,7 @@ steps:
     username: ch1ch1
     password:
       from_secret: dockerhub-password
+
 - name: deliver
   image: plugins/webhook
   settings:
