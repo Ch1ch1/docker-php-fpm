@@ -20,4 +20,4 @@ PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation w
 
 ## Php-fpm port
 
-9000
+9000 
