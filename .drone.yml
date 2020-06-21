@@ -20,7 +20,7 @@ steps:
 ----
 kind: pipeline
 type: exec
-name: Cleaning..
+name: Cleaning the runner..
 clone:
   disable: true
 depends_on:
