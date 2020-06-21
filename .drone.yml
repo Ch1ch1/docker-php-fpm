@@ -24,7 +24,7 @@ name: Cleaning..
 clone:
   disable: true
 depends_on:
-  - Building
+  - Building..
 
 steps:
 - name: Clean
