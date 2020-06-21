@@ -27,7 +27,7 @@ depends_on:
   - Building..
 
 steps:
-- name: Reclaim space on the runner
+- name: reclaim space
   commands:
    - sleep 10
    - docker system prune --all -f
