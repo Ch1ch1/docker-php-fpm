@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: Building
+name: Building..
 
 steps:
 - name: build & push
@@ -17,3 +17,17 @@ steps:
   settings:
     urls:
       from_secret: webhookurl
+----
+kind: pipeline
+type: exec
+name: Cleaning..
+clone:
+  disable: true
+depends_on:
+  - Building
+
+steps:
+- name: Clean
+  commands:
+   - sleep 10
+   - docker system prune --all -f
