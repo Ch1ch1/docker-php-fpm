@@ -3,7 +3,7 @@ type: docker
 name: Building..
 
 steps:
-- name: build & push
+- name: building & pushing
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
@@ -12,22 +12,8 @@ steps:
     password:
       from_secret: dockerhub-password
 
-- name: deliver
+- name: delivering
   image: plugins/webhook
   settings:
     urls:
       from_secret: webhookurl
-----
-kind: pipeline
-type: exec
-name: Cleaning the runner..
-clone:
-  disable: true
-depends_on:
-  - Building..
-
-steps:
-- name: reclaim space
-  commands:
-   - sleep 10
-   - docker system prune --all -f
