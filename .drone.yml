@@ -15,8 +15,20 @@ steps:
     password:
       from_secret: dockerhub-password
 
-- name: delivering
-  image: plugins/webhook
-  settings:
-    urls:
-      from_secret: webhookurl
+---
+kind: pipeline
+type: exec
+name: Updating..
+depends_on:
+  - Building..
+trigger:
+  status:
+    - success
+clone:
+  disable: true
+
+steps:
+- name: Connect & update services
+  commands:
+    - cd /var/tmp
+    - ./updatephpfpm.sh
