@@ -30,4 +30,4 @@ clone:
 steps:
 - name: Connect & update services
   commands:
-    - /var/tmp/updatephpfpm.sh
+    - /var/tmp/updatephpfpm
