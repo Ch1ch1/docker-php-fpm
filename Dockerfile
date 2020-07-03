@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm
+FROM bitnami/php-fpm:7.2
 
 ## Install 'Git'
 USER 0
