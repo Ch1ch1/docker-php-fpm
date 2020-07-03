@@ -1,5 +1,4 @@
-FROM bitnami/php-fpm:7.2
-LABEL maintainer "Ch1ch1 fred.chinchin@gmail.com"
+FROM bitnami/php-fpm
 
 ## Install 'Git'
 USER 0
