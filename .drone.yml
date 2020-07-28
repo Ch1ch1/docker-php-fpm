@@ -14,22 +14,3 @@ steps:
     username: ch1ch1
     password:
       from_secret: dockerhub-password
-
----
-kind: pipeline
-type: exec
-name: Updating..
-node:
-  drone: ch1
-depends_on:
-  - Building..
-trigger:
-  status:
-    - success
-clone:
-  disable: true
-
-steps:
-- name: Connect & update services
-  commands:
-    - /var/tmp/updatephpfpm
