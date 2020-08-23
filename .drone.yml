@@ -10,7 +10,7 @@ steps:
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
-    tag: [ "latest","7.4-prod" ]
+    tag: [ "latest","7.3-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
