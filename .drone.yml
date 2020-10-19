@@ -3,14 +3,14 @@ type: docker
 name: Building..
 node:
   drone: ch1
-
+  drone: nimi
 
 steps:
-- name: building & pushing
+- name: build & push
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
-    tag: [ "latest","7.3-prod" ]
+    tags: [ "latest","7.3-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
@@ -18,7 +18,7 @@ steps:
   image: plugins/webhook
   settings:
     urls:
-     from_secret: webhookgotify
+     from_secret: webhookurl
     content_type: application/json
     template: |
       {
