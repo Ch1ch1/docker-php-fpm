@@ -18,11 +18,11 @@ steps:
   image: plugins/webhook
   settings:
     urls:
-     from_secret: webhookurl
+     from_secret: webhookgotify
     content_type: application/json
     template: |
       {
-       "message": "{{ build.status }}.",
+       "message": "{{ repo.owner }} as updated {{ repo.name }} with {{ build.status }}.",
        "priority": 4,
        "title": "Squid build"
       }
