@@ -14,12 +14,12 @@ steps:
     username: ch1ch1
     password:
       from_secret: dockerhub-password
-- name: build & push php8
+- name: build & push php7.4.13
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
     dockerfile: Dockerfile-php8
-    tags: [ "8-prod" ]
+    tags: [ "7.4.13-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
