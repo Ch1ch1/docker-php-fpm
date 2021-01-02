@@ -1,0 +1,6 @@
+FROM bitnami/php:8.0.0-fpm-alpine
+
+## Install 'Git'
+USER 0
+RUN install_packages git
+USER 1001

@@ -14,6 +14,15 @@ steps:
     username: ch1ch1
     password:
       from_secret: dockerhub-password
+- name: build & push
+  image: plugins/docker
+  settings:
+    repo: ch1ch1/php-fpm
+    dockerfile: Dockerfile-php8
+    tags: [ "8-prod" ]
+    username: ch1ch1
+    password:
+      from_secret: dockerhub-password
 - name: notification
   image: plugins/webhook
   settings:
