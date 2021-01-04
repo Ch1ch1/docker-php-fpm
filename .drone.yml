@@ -10,7 +10,7 @@ steps:
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
-    tags: [ "latest","7.3-prod" ]
+    tags: [ "7.3-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
@@ -19,7 +19,7 @@ steps:
   settings:
     repo: ch1ch1/php-fpm
     dockerfile: Dockerfile-php8
-    tags: [ "7.4.13-prod" ]
+    tags: [ "latest","7.4.13-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
