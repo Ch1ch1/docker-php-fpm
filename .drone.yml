@@ -38,8 +38,9 @@ steps:
       }
   when:
     status: [ success, failure ]
+
 ---
 kind: signature
-hmac: 65f1a64e558ec0f756a2dbfdae3d7aa8b66fddeb3172a6e9137bed29fc2de58f
+hmac: 6451a657cde2d33877209b9bc266fde041f1e5f0e7dd3c5e264d9115ccee8158
 
 ...
