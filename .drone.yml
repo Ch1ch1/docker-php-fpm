@@ -1,3 +1,4 @@
+---
 kind: pipeline
 type: docker
 name: Building..
@@ -37,3 +38,8 @@ steps:
       }
   when:
     status: [ success, failure ]
+---
+kind: signature
+hmac: 65f1a64e558ec0f756a2dbfdae3d7aa8b66fddeb3172a6e9137bed29fc2de58f
+
+...
