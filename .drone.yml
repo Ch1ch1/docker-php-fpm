@@ -54,8 +54,27 @@ steps:
   when:
     status: [ failure ]
 
+trigger:
+  event:
+  - push
+---
+kind: pipeline
+type: docker
+name: deploy
+
+steps:
+- name: deploy
+  image: plugins/webhook
+  settings:
+    urls:
+       from_secret: portainerurl
+
+trigger:
+    event:
+    - promote
+
 ---
 kind: signature
-hmac: 6260fda912436cd9c68565378c22de027588cb4cf351f4a7d69b55ba13026936
+hmac: 12e39e995e1dd52ce2f69e44fdc49f5e493394355540e05c24e818b2504886fb
 
 ...
