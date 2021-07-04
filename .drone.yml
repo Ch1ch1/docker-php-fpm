@@ -7,20 +7,11 @@ node:
   drone: nimi
 
 steps:
-- name: build & push php7.3
+- name: build & push
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
-    tags: [ "7.3-prod" ]
-    username: ch1ch1
-    password:
-      from_secret: dockerhub-password
-- name: build & push php7.4.13
-  image: plugins/docker
-  settings:
-    repo: ch1ch1/php-fpm
-    dockerfile: Dockerfile-php8
-    tags: [ "latest","7.4.13-prod" ]
+    tags: [ "8.0-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
