@@ -57,24 +57,9 @@ steps:
 trigger:
   event:
   - push
----
-kind: pipeline
-type: docker
-name: deploy
-
-steps:
-- name: deploy
-  image: plugins/webhook
-  settings:
-    urls:
-       from_secret: portainerurl
-
-trigger:
-  status:
-  - success
 
 ---
 kind: signature
-hmac: 2cd9fd9f84c11a40b5c597c7753c8890c3b02e63f1a78ed50aa39e5d3193785d
+hmac: 4d627c9bc2dd763e9eb370d60393d6d5cd8b94bb52a6f3c46bd6de561e242717
 
 ...
