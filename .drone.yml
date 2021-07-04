@@ -70,11 +70,11 @@ steps:
        from_secret: portainerurl
 
 trigger:
-    event:
-    - promote
+  status:
+  - success
 
 ---
 kind: signature
-hmac: 12e39e995e1dd52ce2f69e44fdc49f5e493394355540e05c24e818b2504886fb
+hmac: 2cd9fd9f84c11a40b5c597c7753c8890c3b02e63f1a78ed50aa39e5d3193785d
 
 ...
