@@ -57,9 +57,8 @@ steps:
 trigger:
   event:
   - push
-
 ---
 kind: signature
-hmac: c3960b3c0368bb223abc0f5f7150e40a7892f0d5d37bb139d132600a5bf2789c
+hmac: 978b9d7386d375b2beceaca6cb45cf313559b21e40363b443155e2d386362675
 
 ...
