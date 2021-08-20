@@ -11,7 +11,7 @@ steps:
   image: plugins/docker
   settings:
     repo: ch1ch1/php-fpm
-    tags: [ "8.0-prod" ]
+    tags: [ "8.0.9-prod" ]
     username: ch1ch1
     password:
       from_secret: dockerhub-password
