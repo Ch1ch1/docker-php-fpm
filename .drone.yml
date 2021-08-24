@@ -13,7 +13,7 @@ steps:
     auto_tag: true
     username: ch1ch1
     password:
-      from_secret: dockerhub-password
+      from_secret: dockerhub_token
 - name: notification success
   image: plugins/webhook
   settings:
@@ -58,6 +58,6 @@ trigger:
   - push
 ---
 kind: signature
-hmac: 21f0619dd604eb2d4e787119d75f4c28d3988a2e050e4f8230d61d840dd78229
+hmac: 1faae39619855dc7cb5edf905ca9d8c8167c38daaffdb17bc424467cb7b58a69
 
 ...
