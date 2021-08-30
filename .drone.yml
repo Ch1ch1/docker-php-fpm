@@ -6,58 +6,66 @@ node:
   drone: ch1
 
 steps:
-- name: build & push
-  image: plugins/docker
-  settings:
-    repo: ch1ch1/php-fpm
-    auto_tag: true
-    username: ch1ch1
-    password:
-      from_secret: dockerhub_token
-- name: notification success
-  image: plugins/webhook
-  settings:
-    urls:
-     from_secret: webhookgotify
-    content_type: application/json
-    template: |
-      {
-        "extras": {
-        "client::display": {
-        "contentType": "text/markdown"
+  - name: lint
+    image: osshelp/drone-linter
+    failure: ignore
+    settings:
+      dockerfiles:
+        - Dockerfile
+      markdown_files:
+        - README.md
+  - name: build & push
+    image: plugins/docker
+    settings:
+      repo: ch1ch1/php-fpm
+      auto_tag: true
+      username: ch1ch1
+      password:
+        from_secret: dockerhub_token
+  - name: notification success
+    image: plugins/webhook
+    settings:
+      urls:
+        from_secret: webhookgotify
+      content_type: application/json
+      template: |
+        {
+          "extras": {
+          "client::display": {
+          "contentType": "text/markdown"
+          }
+        },
+         "message": "![](https://ch1ch1.fr/img/ok.webp) **{{ repo.owner }}** as updated **{{ repo.name }}**, result: **{{ build.status }}**.",
+         "priority": 4,
+         "title": "{{ repo.name }} build"
         }
-      },
-       "message": "![](https://ch1ch1.fr/img/ok.webp) **{{ repo.owner }}** as updated **{{ repo.name }}**, result: **{{ build.status }}**.",
-       "priority": 4,
-       "title": "{{ repo.name }} build"
-      }
-  when:
-    status: [ success ]
-- name: notification failure
-  image: plugins/webhook
-  settings:
-    urls:
-     from_secret: webhookgotify
-    content_type: application/json
-    template: |
-      {
-        "extras": {
-        "client::display": {
-        "contentType": "text/markdown"
+    when:
+      status: [success]
+  - name: notification failure
+    image: plugins/webhook
+    settings:
+      urls:
+        from_secret: webhookgotify
+      content_type: application/json
+      template: |
+        {
+          "extras": {
+          "client::display": {
+          "contentType": "text/markdown"
+          }
+        },
+         "message": "![](https://ch1ch1.fr/img/nok.webp) **{{ repo.owner }}** as updated **{{ repo.name }}**, result: **{{ build.status }}**.",
+         "priority": 4,
+         "title": "{{ repo.name }} build"
         }
-      },
-       "message": "![](https://ch1ch1.fr/img/nok.webp) **{{ repo.owner }}** as updated **{{ repo.name }}**, result: **{{ build.status }}**.",
-       "priority": 4,
-       "title": "{{ repo.name }} build"
-      }
-  when:
-    status: [ failure ]
+    when:
+      status: [failure]
 
 trigger:
   event:
-  - push
+    - push
 ---
 kind: signature
-hmac: 1faae39619855dc7cb5edf905ca9d8c8167c38daaffdb17bc424467cb7b58a69
+hmac: 3efe88b327c5591295a52c63d52d700dfc3261789b10133c5bc774b9e6006458
 
 ...
