@@ -4,7 +4,7 @@
 
 A PHP-FPM container from [Bitnami](https://hub.docker.com/r/bitnami/php-fpm)
 
-*I use Bitnami images beacause they run as NON-root user and are updated daily with security concern*
+#I use Bitnami images beacause they run as NON-root user and are updated daily with security concern
 
 ## What is PHP-FPM
 
@@ -14,7 +14,7 @@ PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation w
 
 ## Added
 
-### [GIT](https://git-scm.com/)  
+### [GIT](https://git-scm.com/)
 
 ## Php-fpm port
 
