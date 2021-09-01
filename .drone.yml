@@ -4,6 +4,7 @@ type: docker
 name: Building..
 node:
   drone: ch1
+
 steps:
   - name: lint
     image: osshelp/drone-linter
@@ -41,6 +42,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 569b2ffb576df4a81333d147ebf7f513eac27f6e7eefa4c8f0a636107440c22d
+hmac: 9f72e79f1992b434a15bc0be7cdba3c17cfbb0ad8716206f5f59e8fb9de2af87
 
 ...
