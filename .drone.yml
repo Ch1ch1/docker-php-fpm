@@ -18,7 +18,7 @@ steps:
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "8.0.10-prod","latest" ]
+      tags: [ "8.0.10-prod", "latest" ]
       username: ch1ch1
       password:
         from_secret: dockerhub_token
@@ -66,6 +66,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 56bbbc9e054b8dd86775c9b470d13f13d89c214841909e50f0cb12a3b8e0f532
+hmac: d36e955aecf57da2afb8a3a7cfd1e1d88b64fa6a4c347c319abc2b688d8310dd
 
 ...
