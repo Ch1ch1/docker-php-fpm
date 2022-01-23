@@ -4,22 +4,23 @@ type: docker
 name: Building..
 node:
   drone: ch1
-
+  drone: nimi
 steps:
-  - name: lint
-    image: osshelp/drone-linter
-    failure: ignore
-    settings:
-      dockerfiles:
-        - Dockerfile
-      markdown_files:
-        - README.md
   - name: build & push
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "8.0.10-prod", "latest" ]
+      tags: [ "8.0.15-prod", "latest" ]
       username: ch1ch1
+      password:
+        from_secret: dockerhub_token
+  - name: build & push
+    image: plugins/docker
+    settings:
+      repo: ch1ch1/php-fpm
+      tags: [ "7.4.27-prod" ]
+      username: ch1ch1
+      dockerfile: Dockerfilephp7
       password:
         from_secret: dockerhub_token
   - name: notification
@@ -42,6 +43,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 9f72e79f1992b434a15bc0be7cdba3c17cfbb0ad8716206f5f59e8fb9de2af87
+hmac: f01cb1536e4132266df368d7fadf78cbcfeda41287e90788ed898b7ade3851fb
 
 ...
