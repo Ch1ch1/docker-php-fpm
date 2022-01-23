@@ -6,7 +6,7 @@ node:
   drone: ch1
   drone: nimi
 steps:
-  - name: build & push
+  - name: build & push php8
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
@@ -14,7 +14,7 @@ steps:
       username: ch1ch1
       password:
         from_secret: dockerhub_token
-  - name: build & push
+  - name: build & push php7
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
@@ -43,6 +43,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: f01cb1536e4132266df368d7fadf78cbcfeda41287e90788ed898b7ade3851fb
+hmac: 4dbd2bfd765f07e33ab412fe19221b4b783a37e466ce259e38dab014d54e5a9c
 
 ...
