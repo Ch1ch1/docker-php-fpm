@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm:7.4.27-prod
+FROM bitnami/php-fpm:7.4.29-debian-10-r43
 
 ## Install 'Git'
 USER 0

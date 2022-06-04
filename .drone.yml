@@ -10,7 +10,7 @@ steps:
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "8.0.15-prod", "latest" ]
+      tags: [ "8.1.6-debian", "latest" ]
       username: ch1ch1
       password:
         from_secret: dockerhub_token
@@ -18,7 +18,7 @@ steps:
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "7.4.27-prod" ]
+      tags: [ "7.4.29-debian" ]
       username: ch1ch1
       dockerfile: Dockerfilephp7
       password:
@@ -43,6 +43,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 4dbd2bfd765f07e33ab412fe19221b4b783a37e466ce259e38dab014d54e5a9c
+hmac: 72356d30b8c9700138d5b685d23a8290e2528169c32e1ccd788a540031c8988a
 
 ...
