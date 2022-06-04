@@ -4,7 +4,6 @@ type: docker
 name: Building..
 node:
   drone: ch1
-  drone: nimi
 steps:
   - name: build & push php8
     image: plugins/docker
@@ -43,6 +42,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 72356d30b8c9700138d5b685d23a8290e2528169c32e1ccd788a540031c8988a
+hmac: 85f74816a5a2f4676f5867e46b2155ccc2541441d9a853c42d5ccd9d544922f4
 
 ...
