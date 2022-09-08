@@ -17,7 +17,7 @@ steps:
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "7.4.29-debian" ]
+      tags: [ "7.4.30-debian" ]
       username: ch1ch1
       dockerfile: Dockerfilephp7
       password:
