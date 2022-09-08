@@ -42,6 +42,6 @@ trigger:
     - push
 ---
 kind: signature
-hmac: 40627cc4f14c492cf038c1f4559b48a1103d02d991edee8adfff2d19edc7d78b
+hmac: acbe895cf9ab0f40d87d5cc5606f6ac0cf71ec647a0ee8193c8fd083dbfef4d8
 
 ...
