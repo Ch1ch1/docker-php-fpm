@@ -9,7 +9,7 @@ steps:
     image: plugins/docker
     settings:
       repo: ch1ch1/php-fpm
-      tags: [ "8.1.10-debian", "latest" ]
+      tags: [ "8.0.23", "latest" ]
       username: ch1ch1
       password:
         from_secret: dockerhub_token
