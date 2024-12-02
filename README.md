@@ -2,8 +2,6 @@
 
 [![status-badge](https://ci.ch1.ninja/api/badges/9/status.svg)](https://ci.ch1.ninja/repos/9)
 
-A PHP-FPM container from [Bitnami](https://hub.docker.com/r/bitnami/php-fpm)
-
 ## What is PHP-FPM
 
 PHP-FPM (FastCGI Process Manager) is an alternative PHP FastCGI implementation with some additional features useful for sites of any size, especially busier sites.
