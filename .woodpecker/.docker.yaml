@@ -8,7 +8,7 @@ when:
 
 variables:
   - &buildx_plugin 'docker.io/woodpeckerci/plugin-docker-buildx:5.0.0'
-  - &platforms_alpine 'linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/amd64,linux/ppc64le'
+  - &platforms 'linux/amd64'
   - publish_logins: &publish_logins
       - registry: https://index.docker.io/v1/
         username: ch1ch1
@@ -17,25 +17,14 @@ variables:
   - &publish_repos 'ch1ch1/php-fpm'
 
 steps:
-  build-squid-dev:
+  build-php-fpm:
     image: *buildx_plugin
     settings:
       repo: *publish_repos
       dockerfile: Dockerfile
-      platforms: *platforms_alpine
-      tag: latest-dev
+      platforms: *platforms
+      tag: [latest, '8.1-fpm']
       logins: *publish_logins
       dry-run: true
     when:
       - event: [pull_request, push]
-
-  build-php:
-    image: *buildx_plugin
-    settings:
-      repo: *publish_repos
-      dockerfile: Dockerfile
-      platforms: *platforms_alpine
-      tag: [latest, '8.1-fpm']
-      logins: *publish_logins
-    when:
-      - event: tag
