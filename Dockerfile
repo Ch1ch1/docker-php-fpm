@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm:8.0.23
+FROM php:8.1-fpm-alpine
 
-## Install 'Git'
+RUN docker-php-ext-install gd zip
 RUN install_packages git

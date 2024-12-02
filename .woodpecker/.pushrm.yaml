@@ -1,0 +1,25 @@
+---
+depends_on: [docker]
+when:
+  - event: [pull_request, tag]
+  - event: push
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+
+steps:
+  link-validation:
+    image: docker.io/lycheeverse/lychee
+    commands:
+      - lychee --no-progress --format detailed README.md
+
+  pushrm-dockerhub:
+    image: docker.io/chko/docker-pushrm:1
+    environment:
+      DOCKER_USER: ch1ch1
+      PUSHRM_FILE: README.md
+      PUSHRM_SHORT: php-fpm with Gd, Zip & Git
+      PUSHRM_TARGET: ch1ch1/php-fpm
+      DOCKER_PASS: 
+        - from_secret: docker_token
+    commands:
+       - /bin/true

@@ -1,4 +1,0 @@
-FROM bitnami/php-fpm:7.4.30-debian-11-r38
-
-## Install 'Git'
-RUN install_packages git
