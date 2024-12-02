@@ -23,7 +23,7 @@ steps:
       repo: *publish_repos
       dockerfile: Dockerfile8.1
       platforms: *platforms
-      tag: 8.1-fpm
+      tag: [8.1-fpm, latest-8.1-fpm]
       logins: *publish_logins
     when:
       - event: [pull_request, push]
@@ -33,7 +33,7 @@ steps:
       repo: *publish_repos
       dockerfile: Dockerfile8.2
       platforms: *platforms
-      tag: 8.2-fpm
+      tag: [8.2-fpm, latest-8.2-fpm]
       logins: *publish_logins
     when:
       - event: [pull_request, push]
@@ -43,7 +43,7 @@ steps:
       repo: *publish_repos
       dockerfile: Dockerfile8.3
       platforms: *platforms
-      tag: 8.3-fpm
+      tag: [8.3-fpm, latest-8.3-fpm]
       logins: *publish_logins
     when:
       - event: [pull_request, push]
@@ -53,7 +53,7 @@ steps:
       repo: *publish_repos
       dockerfile: Dockerfile8.4
       platforms: *platforms
-      tag: 8.4-fpm
+      tag: [8.4-fpm, latest-8.4-fpm]
       logins: *publish_logins
     when:
       - event: [pull_request, push]
