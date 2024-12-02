@@ -25,7 +25,6 @@ steps:
       platforms: *platforms
       tag: 8.1-fpm
       logins: *publish_logins
-      dry-run: true
     when:
       - event: [pull_request, push]
   build-php-fpm8.2:
@@ -36,7 +35,6 @@ steps:
       platforms: *platforms
       tag: 8.2-fpm
       logins: *publish_logins
-      dry-run: true
     when:
       - event: [pull_request, push]
   build-php-fpm8.3:
@@ -47,7 +45,6 @@ steps:
       platforms: *platforms
       tag: 8.3-fpm
       logins: *publish_logins
-      dry-run: true
     when:
       - event: [pull_request, push]
   build-php-fpm8.4:
@@ -58,6 +55,5 @@ steps:
       platforms: *platforms
       tag: 8.4-fpm
       logins: *publish_logins
-      dry-run: true
     when:
       - event: [pull_request, push]
