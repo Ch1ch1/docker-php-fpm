@@ -1,6 +1,6 @@
 # PHP-FPM
 
-![Build Status](https://drone.ch1.ninja/api/badges/Ch1ch1/docker-php-fpm/status.svg)
+[![status-badge](https://ci.ch1.ninja/api/badges/9/status.svg)](https://ci.ch1.ninja/repos/9)
 
 A PHP-FPM container from [Bitnami](https://hub.docker.com/r/bitnami/php-fpm)
 

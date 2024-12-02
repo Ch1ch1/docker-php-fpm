@@ -17,13 +17,46 @@ variables:
   - &publish_repos 'ch1ch1/php-fpm'
 
 steps:
-  build-php-fpm:
+  build-php-fpm8.1:
     image: *buildx_plugin
     settings:
       repo: *publish_repos
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile8.1
       platforms: *platforms
-      tag: [latest, '8.1-fpm']
+      tag: ['8.1-fpm']
+      logins: *publish_logins
+      dry-run: true
+    when:
+      - event: [pull_request, push]
+  build-php-fpm8.2:
+    image: *buildx_plugin
+    settings:
+      repo: *publish_repos
+      dockerfile: Dockerfile8.2
+      platforms: *platforms
+      tag: ['8.2-fpm']
+      logins: *publish_logins
+      dry-run: true
+    when:
+      - event: [pull_request, push]
+  build-php-fpm8.3:
+    image: *buildx_plugin
+    settings:
+      repo: *publish_repos
+      dockerfile: Dockerfile8.3
+      platforms: *platforms
+      tag: ['8.3-fpm']
+      logins: *publish_logins
+      dry-run: true
+    when:
+      - event: [pull_request, push]
+  build-php-fpm8.4:
+    image: *buildx_plugin
+    settings:
+      repo: *publish_repos
+      dockerfile: Dockerfile8.4
+      platforms: *platforms
+      tag: ['8.4-fpm']
       logins: *publish_logins
       dry-run: true
     when:
