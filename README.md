@@ -1,6 +1,6 @@
 # PHP-FPM
 
-[![status-badge](https://ci.ch1.ninja/api/badges/9/status.svg)](https://ci.ch1.ninja/repos/9)
+[![status-badge](https://ci.ch1.ninja/api/badges/2/status.svg)](https://ci.ch1.ninja/repos/2)
 
 ## What is PHP-FPM
 
